@@ -1,3 +1,5 @@
+import PocketBase from "./vendor/pocketbase.js";
+
 const pb = new PocketBase("http://127.0.0.1:8090");
 const app = document.getElementById("app");
 
@@ -5,9 +7,7 @@ function updatePage() {
   pb.collection("categories")
     .getFullList({ expand: "products_via_category" })
     .then((categories) => {
-      app.innerHTML = "";
-
-      categories.forEach((category) => {
+      const elements = categories.map((category) => {
         const {
           id,
           name,
@@ -36,8 +36,11 @@ function updatePage() {
           </ul>
         `;
 
-        app.appendChild(container);
+        return container;
       });
+
+      app.innerHTML = "";
+      elements.forEach((element) => app.appendChild(element));
     });
 }
 

@@ -41,7 +41,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 0;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .category li {
@@ -56,12 +56,13 @@ body {
 }
 
 .category li p {
-    color: #aaa;
-    margin-block: 0.5em;
+    color: #bbb;
+    margin: 0.25em 0 0 0;
 }
 
 .category hr {
     flex: 1;
+    border: none;
     border-top: 1px dashed #d0d0d0;
     height: 0;
 }
