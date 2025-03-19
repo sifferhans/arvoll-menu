@@ -27,7 +27,7 @@ function updatePage() {
                   <div>
                     <span>${product.name}</span>
                     <hr />
-                    <span>${product.price} kr</span>
+                    <span>${Number(product.price) > 0 ? product.price + " kr" : "Gratis"}</span>
                   </div>
                   ${product.description && `<p>${product.description}</p>`}
                 </li>`,
