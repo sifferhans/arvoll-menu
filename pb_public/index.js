@@ -7,7 +7,7 @@ function updatePage() {
   pb.collection("categories")
     .getFullList({ expand: "products_via_category" })
     .then((categories) => {
-      const elements = categories.map((category) => {
+      const elements = categories.filter(category => category.expand.products_via_category?.length > 0).map((category) => {
         const {
           id,
           name,
