@@ -1,6 +1,6 @@
 import PocketBase from "./vendor/pocketbase.js";
 
-const pb = new PocketBase("http://127.0.0.1:8090");
+const pb = new PocketBase(":8090");
 const app = document.getElementById("app");
 
 function updatePage() {
